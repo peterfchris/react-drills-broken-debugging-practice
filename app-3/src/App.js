@@ -17,13 +17,13 @@ class App extends Component {
   }
 
   render() {
-    let bobsList = this.state.bobs.filter(bob => bob.includes(this.state.input).map(bob => (
+    let bobsList = this.state.bobs.filter(bob => bob.includes(this.state.input)).map(bob => (
       <h3 key={bob}>{bob}</h3>
     ))
     return (
       <div className="App">
         <h1>Famous Bobs</h1>
-        <h2>Filter: <input onChange={this.handleChange} type="text"/></h2>
+        <h2>Filter: <input onChange={(e) => this.handleChange(e.target.value)} type="text"/></h2>
         {bobsList}
       </div>
     );
